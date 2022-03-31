@@ -17,7 +17,7 @@ public class LoanDecisionServiceImpl implements LoanDecisionService {
 
     @Override
     public LoanDecision createLoanDecision (LoanDecision loanDecision, UserRequest userRequest) throws Exception {
-        LoanDecision loanDB;
+        LoanDecision loanDB = null;
         //calculate credit Score
         int creditScore = (int) ((loanDecision.getUserDetails().getSegmentation().getCreditModifier()
                         / userRequest.getRequestLoanAmount())
@@ -29,9 +29,10 @@ public class LoanDecisionServiceImpl implements LoanDecisionService {
             //throw new Exception(LOANNOTAPPROVED);
         }
         else {
+            System.out.println("Look for possible best offer");
 
         }
-       return loanDecisionRepository.save(loanDecision);
+       return loanDecisionRepository.save(loanDB);
 
     }
 
