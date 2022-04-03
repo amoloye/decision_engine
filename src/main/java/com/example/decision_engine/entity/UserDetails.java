@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,9 +21,16 @@ public class UserDetails {
     @NotEmpty
     private String personalCode;
 
-    @OneToOne
-    @JoinColumn(name="segmentationId")
+    //enum
+    @Enumerated(EnumType.STRING)
     private Segmentation segmentation;
 
+    //loanhistory
+    @OneToMany
+    @JoinColumn(name="userRequestId")
+   private List<LoanRequest> loanHistory;
 
+    public void setLoanHistory (LoanRequest request) {
+        this.loanHistory.add(request);
+    }
 }

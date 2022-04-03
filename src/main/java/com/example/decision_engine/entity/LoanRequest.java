@@ -16,9 +16,9 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Entity
 
-
-public class UserRequest {
+public class LoanRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int userRequestId;
@@ -34,5 +34,5 @@ public class UserRequest {
     @NotEmpty(message = "input loan period in months")
     private int requestLoanPeriod;
 
-
+    private String decision;
 }

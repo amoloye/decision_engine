@@ -9,7 +9,7 @@ public interface UserDetailsService {
     Optional<UserDetails> fetchUserDetailsById(Integer userDetailsId);
     UserDetails updateUserDetails(Integer userDetailsId, UserDetails userDetails);
     void deleteUserDetailsById(Integer userDetailsId);
-    UserDetails fetchUserDetailsByPersonalCode(String personalCode);
+
 
 
 

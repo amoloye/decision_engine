@@ -1,34 +1,17 @@
 package com.example.decision_engine.entity;
 
 
-import lombok.*;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-
-@Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-public class Segmentation {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int segmentationId;
-
-    @NotBlank
-    private String segmentationName;
-
-    @NotEmpty
-    private long creditModifier;
+public enum Segmentation {
+    DEBT(0),
+    SEG_ONE(100),
+    SEG_TWO(300),
+    SEG_THREE(1000);
 
 
+    private final int value;
 
-
+    Segmentation (int value) {
+        this.value = value;
+    }
+    public int getValue () { return value; }
 }

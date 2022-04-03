@@ -39,10 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     }
 
-    @Override
-    public UserDetails fetchUserDetailsByPersonalCode (String personalCode) {
-        return userDetailsRepository.findByPersonalCode(personalCode);
-    }
+
 
 
 }
