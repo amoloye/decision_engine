@@ -1,5 +1,6 @@
 package com.example.decision_engine.entity;
 
+
 public enum Limits {
     AmountMax(10000),
     AmountMin(2000),

@@ -7,12 +7,13 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
+
+@Builder
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,7 +31,13 @@ public class UserDetails {
     @JoinColumn(name="userRequestId")
    private List<LoanRequest> loanHistory;
 
-    public void setLoanHistory (LoanRequest request) {
-        this.loanHistory.add(request);
+    public void setLoanHistory (LoanRequest loanRequest) {
+        this.loanHistory.add(loanRequest);
+    }
+
+    public UserDetails (String personalCode, Segmentation segmentation) {
+        this.personalCode = personalCode;
+        this.segmentation = segmentation;
+
     }
 }

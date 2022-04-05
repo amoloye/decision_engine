@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
-
 @AllArgsConstructor
 @RestController
 public class LoanController {
@@ -18,7 +16,7 @@ public class LoanController {
 
 
     @GetMapping("/decision")
-    public ResponseEntity<String> fetchLoanDecision(@Valid @RequestBody LoanRequest loanRequest) throws Exception {
+    public ResponseEntity<String> fetchLoanDecision(@RequestBody LoanRequest loanRequest) throws Exception {
         return new ResponseEntity<>( loanService.makeLoanRequest(loanRequest), HttpStatus.OK);
 
     }

@@ -4,7 +4,6 @@ package com.example.decision_engine.service;
 import com.example.decision_engine.entity.LoanRequest;
 import com.example.decision_engine.entity.UserDetails;
 
-import java.math.BigDecimal;
 
 
 public interface LoanService {
