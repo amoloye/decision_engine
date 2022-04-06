@@ -20,14 +20,14 @@ public class LoanServiceImpl implements LoanService {
         if (userDetails == null) {
             throw new UserNotFoundException("User not found with personal code: " + loanRequest.getPersonalCode());
         }
-        String decision = approveLoan(userDetails, loanRequest);
+         String decision = approveLoan(userDetails, loanRequest);
         //sets the new decision into the loan request
         loanRequest.setDecision(decision);
 
         //this user saves the loan request as a string into it's loan history
         userDetails.setLoanHistory(loanRequest);
 
-        userDetailsRepository.save(userDetails);
+        //userDetailsRepository.save(userDetails);
 
 
         return decision;

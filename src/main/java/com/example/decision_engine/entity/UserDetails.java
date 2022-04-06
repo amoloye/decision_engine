@@ -27,7 +27,7 @@ public class UserDetails {
     private Segmentation segmentation;
 
     //loanhistory
-    @OneToMany
+    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE})
     @JoinColumn(name="userRequestId")
    private List<LoanRequest> loanHistory;
 
