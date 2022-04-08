@@ -39,4 +39,6 @@
 
 #If a suitable loan amount is not found within the selected period, the decision engine should also try to find a new suitable period.
 
+# ui : reactjs : https://github.com/amoloye/decision_engine_ui
+
 # amount calculation takes preference to period(months) when finding the suitable loan
